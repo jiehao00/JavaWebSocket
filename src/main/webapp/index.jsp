@@ -7,13 +7,13 @@
 <body>
     Welcome<br/><input id="text" type="text"/>
     <button onclick="send()">发送消息</button>&nbsp;&nbsp;
-    <img src="${currentUser.imagesUrl}" style="width: 50px; height:50px"/>
+    <img src="${pageContext.request.contextPath }/${currentUser.imagesUrl}" style="width: 50px; height:50px"/>
     发送人：${currentUser.name}<input type="text" id="out" value="${currentUser.name}" hidden>&nbsp;&nbsp;
     接收人: <select id="serverId">
         <option>请选择</option>
     </select>
     单人:<input type="radio" name="single" value="0" checked="checked">&nbsp; 群发：<input type="radio" name="single" value="1">&nbsp;&nbsp;
-    <a href="/user/logout.do?name=${currentUser.name}">注销</a>
+    <a href="${pageContext.request.contextPath}/user/logout.do?name=${currentUser.name}">注销</a>
     <hr/>
     <button onclick="closeWebSocket()">关闭WebSocket连接</button>
     <button onclick="openWebSocket()">开启WebSocket连接</button>
@@ -23,13 +23,13 @@
 		<th align="center"  colspan="9">实时信息监控</th>
 	</table>
 <audio id="music">
-    <source src="/audio/sound.wav">
+    <source src="${pageContext.request.contextPath }/audio/sound.wav">
 </audio>
 </body>
 <script   src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/searchName.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/searchName.js"></script>
 <script type="text/javascript" >
     var out=document.getElementById('out').value;
     var websocket = null;
@@ -58,7 +58,7 @@
      function openWebSocket() {
          var out=document.getElementById('out').value;
          console.log(out);
-         websocket = new WebSocket("ws://"+window.location.host+"/websocket/"+out);
+         websocket = new WebSocket("ws://"+window.location.host+"${pageContext.request.contextPath }/websocket/"+out);
          //连接成功建立的回调方法
          websocket.onopen = function () {
              setMessageInnerHTML("WebSocket连接成功");
@@ -87,7 +87,7 @@
          closeWebSocket();
          $.ajax({
              type:'post',
-             url:'/user/out.do',
+             url:'${pageContext.request.contextPath }/user/out.do',
              data:{name:out},
              success:function () {
              }

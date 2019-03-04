@@ -4,8 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    
-    
     <welcome-file-list>
         <welcome-file>/login.jsp</welcome-file>
     </welcome-file-list>
@@ -13,6 +11,11 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <!--log4j配置文件-->
+    <context-param>
+        <param-name>lo4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
     </context-param>
     <!-- 编码过滤器 -->
     <filter>
@@ -52,5 +55,4 @@
         <servlet-name>springMVC</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
 </web-app>

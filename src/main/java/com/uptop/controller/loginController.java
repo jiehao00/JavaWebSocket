@@ -75,7 +75,8 @@ public class loginController {
     public List<Users> search(){
         List<Users>users=new ArrayList<Users>();
         users=userService.searchName();
-        //System.out.println(users);
+        System.out.println(users);
+        System.out.println("----------------------------");
         return users;
     }
 
@@ -84,6 +85,7 @@ public class loginController {
         String sqlPath = null;
         //本地服务器路径
         String dir = request.getSession().getServletContext().getRealPath("")+"/upload/images/";
+        System.out.println(dir);
         //定义 文件名
         String filename=null;
         Users resultUser=userService.exam(users);

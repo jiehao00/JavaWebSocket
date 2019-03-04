@@ -11,9 +11,9 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/js/images.js"></script>
-   <link type="text/css" rel="stylesheet" href="/css/images.css">
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/images.js"></script>
+   <link type="text/css" rel="stylesheet" href="./css/images.css">
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/user/images.do" method="post" enctype="multipart/form-data">

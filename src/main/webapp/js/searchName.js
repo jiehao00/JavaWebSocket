@@ -4,7 +4,7 @@ $(document).ready(function () {
     var array=new Array();
     $.ajax({
         type:'post',
-        url:'/user/seachName.do',
+        url:'/JavaWebSocket/user/seachName.do',
         dataType:'json',
         success:function (data) {
             console.log(data)

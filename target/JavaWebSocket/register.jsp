@@ -10,9 +10,9 @@
 <head>
     <title>Title</title>
 </head>
-<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="/js/images.js"></script>
-<link type="text/css" rel="stylesheet" href="/css/images.css">
+<script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="./js/images.js"></script>
+<link type="text/css" rel="stylesheet" href="./css/images.css">
 <body>
 <h2>用户注册</h2>
 <form action="${pageContext.request.contextPath }/user/register.do" method="post" enctype="multipart/form-data">
@@ -31,7 +31,7 @@
     password:<input type="password" name="password"/><br/>
     <input type="submit" value="注册"/><font color="red">${errorMsg}</font>
 </form>
-返回<a href="/login.jsp">登录</a>
+返回<a href="./login.jsp">登录</a>
 </div>
 </body>
 </html>

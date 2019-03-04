@@ -9,8 +9,5 @@
         <module name="JavaWebSocket" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="JavaWebSocket" target="1.6" />
-    </bytecodeTargetLevel>
   </component>
 </project>
